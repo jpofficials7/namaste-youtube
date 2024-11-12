@@ -13,11 +13,7 @@ const Head = () => {
       <div className="flex col-span-1">
         <img onClick={toggleMenuHandler} className="h-8 cursor-pointer" src="hambergerMenu.png" alt="menu" />
         <a href="/">
-          <img
-            className="h-8 mx-2"
-            src="https://cdn.mos.cms.futurecdn.net/8gzcr6RpGStvZFA2qRt4v6-1200-80.jpg"
-            alt="youtube-logo"
-          />
+          <img className="h-8 mx-2" src={'youtubeLogo.png'} alt="youtube-logo" />
         </a>
       </div>
       <div className="col-span-10 px-10">
