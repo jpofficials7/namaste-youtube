@@ -30,7 +30,6 @@ const Head = () => {
       } else {
         getSearchSuggestions();
       }
-      getSearchSuggestions();
     }, 200);
     return () => clearTimeout(timer);
   }, [searchQuery]);
@@ -86,16 +85,19 @@ const Head = () => {
           />
           <button className="border border-gray-400 px-5 py-2 rounded-r-full bg-gray-100">🔍</button>
         </div>
-        <div className="fixed bg-white py-2 px-2 w-[37rem] shadow-lg rounded-lg border border-gray-100">
-          <ul>
-            {showSuggestions &&
-              suggestions.map((suggestion) => (
-                <li key={suggestion} className="py-2 px-3 shadow-sm hover:bg-gray-100">
-                  {suggestion}
-                </li>
-              ))}
-          </ul>
-        </div>
+        {showSuggestions && suggestions.length > 0 && (
+          <div className="fixed bg-white py-2 px-2 w-[37rem] shadow-lg rounded-lg border border-gray-100">
+            {
+              <ul>
+                {suggestions.map((suggestion) => (
+                  <li key={suggestion} className="py-2 px-3 shadow-sm hover:bg-gray-100">
+                    {suggestion}
+                  </li>
+                ))}
+              </ul>
+            }
+          </div>
+        )}
       </div>
       <div className="col-span-1">
         <img className="h-8" alt="user" src="user.png" />
