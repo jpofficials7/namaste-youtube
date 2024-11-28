@@ -17,10 +17,6 @@ const Demo2 = () => {
     i.current = setInterval(() => {
       console.log('Namaste React', Math.random());
     }, 1000);
-
-    return () => {
-      clearInterval(i.current);
-    };
   }, []);
 
   return (
