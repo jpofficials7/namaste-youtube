@@ -14,6 +14,7 @@ const Demo2 = () => {
 
   const i = useRef(null);
   useEffect(() => {
+    if (i.current) return;
     i.current = setInterval(() => {
       console.log('Namaste React', Math.random());
     }, 1000);
